@@ -1,0 +1,36 @@
+{
+    "id": "gcloud-cli",
+    "version": "1.0.0",
+    "name": "Google Cloud CLI",
+    "documentationURL": "https://github.com/devcontainers-contrib/features/tree/main/src/gcloud-cli",
+    "description": "Installs the gcloud CLI tools (gcloud, bq, gsutil) using apt-get",
+    "options": {
+      "version": {
+        "type": "string",
+        "proposals": [
+          "latest"
+        ],
+        "default": "latest",
+        "description": "Select or enter a gcloud CLI version. (10 most recent version are always available in the repo.)"
+      },
+      "additional_components": {
+        "type": "string",
+        "default": "",
+        "description": "Optional comma separated list of gcloud components. (See https://cloud.google.com/sdk/docs/install#deb for component options)",
+        "proposals": [
+            "google-cloud-cli-anthos-auth",
+            "google-cloud-cli-skaffold, kubectl, google-cloud-cli-minikube"
+        ]
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "GoogleCloudTools.cloudcode"
+        ]
+      }
+    },
+    "installsAfter": [
+      "ghcr.io/devcontainers/features/common-utils"
+    ]
+  }

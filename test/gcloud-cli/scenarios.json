@@ -1,0 +1,56 @@
+{
+    "test_bookworm_no_args": {
+        "image": "debian:bookworm",
+        "features": {
+            "gcloud-cli": {}
+        }
+    },
+    "test_bookworm_slim_no_args": {
+        "image": "debian:bookworm-slim",
+        "features": {
+            "gcloud-cli": {
+            }
+        }
+    },
+    "test_with_skaffold": {
+        "image": "debian:bookworm",
+        "features": {
+            "gcloud-cli": {
+                "additional_components": "google-cloud-cli-skaffold"
+            }
+        }
+    },
+    "test_with_skaffold_and_minikube": {
+        "image": "debian:bookworm",
+        "features": {
+            "gcloud-cli": {
+                "additional_components": "google-cloud-cli-skaffold, google-cloud-cli-minikube"
+            }
+        }
+    },
+    "test_with_skaffold_kubectl_and_minikube": {
+        "image": "debian:bookworm",
+        "features": {
+            "gcloud-cli": {
+                "additional_components": "google-cloud-cli-skaffold, kubectl, google-cloud-cli-minikube"
+            }
+        }
+    },
+    "test_specific_gcloud_version": {
+        "image": "debian:bookworm",
+        "features": {
+            "gcloud-cli": {
+                "version": "475.0.0"
+            }
+        }
+    },
+    "test_specific_gcloud_version_with_skaffold": {
+        "image": "debian:bookworm",
+        "features": {
+            "gcloud-cli": {
+                "version": "475.0.0",
+                "additional_components": "google-cloud-cli-skaffold"
+            }
+        }
+    }
+}
